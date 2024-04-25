@@ -3,7 +3,7 @@
     <!--<link rel="stylesheet" href="tMRTHome.css">-->
     <nav class="navbar">
         <div class="container header">
-            <div class="logo header-right"><a href="https://onedotm.com/"><img src="https://onedotm.com/wp-content/uploads/2023/01/onedot-logo.png"
+            <div class="logo"><a href="https://onedotm.com/"><img src="https://onedotm.com/wp-content/uploads/2023/01/onedot-logo.png"
                     srcset="https://onedotm.com/wp-content/uploads/2023/01/onedot-logo.png"
                     alt="OneDot"></a>&nbsp;&nbsp;
                     
@@ -38,6 +38,8 @@
                     <div class="search-button"> <i class="lni lni-search-alt"></i> </div>
                     <div class="hamburger-menu"> <span></span> <span></span> <span></span> </div>
                 </div>-->
+            </div>
+            <div class="header-right">
                 <a title="Home" href="https://onedotm.com/" class="nav-link">Home</a>&nbsp;
                 <a title="About" href="https://onedotm.com/about/" class="nav-link">About</a>&nbsp;
                 <a title="Services" href="https://onedotm.com/digital-marketing-services-in-chennai/" class="nav-link">Services</a>&nbsp;
@@ -53,17 +55,17 @@
         <!-- Image Slider-->
         
         <lightning-button label="Show Industry" class="slides-btn industry-btn" onclick={showSlidesIndustry}> </lightning-button>&nbsp;&nbsp;
-        <lightning-button label="Show Services" class=" slides-btn services-btn" onclick={showSlidesService}> </lightning-button>
+        <lightning-button label="Show Services" class=" slides-btn services-btn" onclick={showSlidesServices}> </lightning-button>
 
         <div class="slideshow-container industry center"> 
             <p>
-                <template for:each={slidesIndustry} for:item="slide">
-                    <div key={slide}>
+                <template for:each={slidesIndustry} for:item="slideInd">
+                    <div key={slideInd}>
                         &nbsp;&nbsp;
                         <div class="mySlides fade">
-                            <p class="slideText">{slide.ind}</p>
-                            <p class="numbertext">{slide.page} / {slidesIndustry.length}</p>
-                            <p class="img bg-img {slide.ind}"><img src={slide.img}></p>
+                            <p class="slideText">{slideInd.ind}</p>
+                            <p class="numbertext">{slideInd.page} / {slidesIndustry.length}</p>
+                            <p class="img bg-img {slideInd.ind}"><img src={slideInd.img}></p>
                         </div>
                     </div>
                 </template>
@@ -117,14 +119,14 @@
             <div w3-include-html ="tMRTImage.html"></div>
         </template> -->
     </div>
-    <div class="slideshow-container services"> 
+    <div class="slideshow-container services center"> 
         <p>
-            <template for:each={slidesServices} for:item="slide">
-                <div key={slide}>
+            <template for:each={slidesServices} for:item="slideSer">
+                <div key={slideSer}>
                     <div class="mySlides fade">
-                        <p class="img bg-img {slide.ind}"><img src={slide.img}></p>
-                        <p class="slideText">{slide.ind}</p>
-                        <p class="numbertext">{slide.page} / 5</p>
+                        <p class="slideText">{slideSer.ser}</p>
+                        <p class="numbertext">{slideSer.page} / {slidesServices.length}</p>
+                        <p class="img bg-img {slideSer.ser}"><img src={slideSer.img}></p>
                     </div>
                 </div>
             </template>
